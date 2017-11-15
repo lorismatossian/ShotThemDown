@@ -19,6 +19,8 @@ function shoot()
         bullet.angle = player1.direction;
         player1.bullets.push(bullet);
         bulletTime1 = clock.getElapsedTime();
+    	//if (ennemy1.graphic.postion.x = bullet.graphic.position.x && ennemy1.graphic.postion.y = bullet.graphic.position.y)
+    	//	remove(ennemy1)
     } 
 
     // move bullets
