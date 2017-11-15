@@ -30,6 +30,7 @@ function init()
 
     light1 = new Light("sun", 0xffffff, "0,0,340");
     scene.add(light1);
+
 }
 
 function Ground(color, size_x, size_y, nb_tile)
@@ -47,7 +48,10 @@ function Ground(color, size_x, size_y, nb_tile)
     for (x = minX; x <= maxX; x = x+sizeOfTileX){
         for (y = minY; y <= maxY; y = y+sizeOfTileY){
 
-            color = colors[Math.floor(Math.random()*colors.length)];
+	    if ((((minX + maxX)/2) == x)  && (((minY + maxY)/2) == y))
+	    	color = 0x00ff00;
+	    else
+                color = colors[Math.floor(Math.random()*colors.length)];
        
             if (0x000000 != color)
             {
@@ -66,7 +70,7 @@ function Ground(color, size_x, size_y, nb_tile)
 
 function Light(name, color, position)
 {
-    pointLight = new THREE.PointLight(color, 50, 350);
+    pointLight = new THREE.PointLight(color, 50, 3500);
 
     pointLight.position.x = position.split(',')[0];
     pointLight.position.y = position.split(',')[1];
